@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ssm:GetParameter",
+      "Resource": [
+        "arn:aws:ssm:*:*:parameter/dragon_data_bucket_name",
+        "arn:aws:ssm:*:*:parameter/dragon_data_file_name"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::bma*",
+        "arn:aws:s3:::bma*/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "xray:*",
+      "Resource": "*"
+    }
+  ]
+}

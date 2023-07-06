@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Demo Cognito</title>
+    <style>
+      span {
+        display: block;
+        word-wrap: break-word;
+        width: 500px;
+        white-space: normal;
+        padding: 10px;
+        color: grey;
+        background-color: white;
+        border: black 2px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      The token to authenticate is <span id="token"></span>
+    </div>
+    <script>
+      (function init() {
+        var id_token_str = window.location.hash.split("&access_token=")[0];
+        var authorization_str = id_token_str.replace("#id_token=", "");
+        document.getElementById("token").innerHTML = authorization_str;
+      })();
+    </script>
+  </body>
+</html>
